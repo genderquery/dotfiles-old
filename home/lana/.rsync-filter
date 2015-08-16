@@ -1,0 +1,12 @@
+- *.pyc
+- .git
+- .metadata
+- /.cache
+- /.cups
+- /.dbus
+- /.hplip
+- /.steam
+- /.themes
+- /.thumbnails
+- /.wine*
+- /Downloads

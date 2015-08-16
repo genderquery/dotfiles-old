@@ -1,0 +1,10 @@
+alias sudo='sudo '
+alias sudoedit='sudo -E vim'
+alias ls='ls --color'
+alias less='less -R'
+alias o='xdg-open'
+alias p='ps -wwfu lana'
+alias clip='xclip -selection clipboard'
+alias dpkg-autopurge='dpkg --purge \
+  $(dpkg --get-selections | grep deinstall | cut -f1)'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
