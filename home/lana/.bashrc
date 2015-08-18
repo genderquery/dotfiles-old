@@ -80,3 +80,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+cat ~/.todo
+
+function check_mood_entry {
+  last_entry=$(tail -n1 ~/.mood | cut -d' ' -f1)
+  if [ "$last_entry" != "$(date +%F)" ]; then
+     echo "- .mood needs today's entry"
+  fi
+}
+check_mood_entry
