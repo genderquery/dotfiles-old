@@ -46,16 +46,16 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-  PS1='\[\033[30;47m\]$(date +%R)\[\033[00m\] ($?) ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+  PS1='($?) ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
 else
-  PS1='$(date +%R) ($?) ${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
+  PS1='($?) ${debian_chroot:+($debian_chroot)}\u:\w\n\$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-  PROMPT_COMMAND='echo -ne "\033]0;${debian_chroot:+($debian_chroot)}${USER}@${HOSTNAME}: ${PWD}\007"'
+  PROMPT_COMMAND='echo -ne "\033]0;${debian_chroot:+($debian_chroot)}${USER}: ${PWD}\007"'
 
   # Show the currently running command in the terminal title:
   # http://www.davidpashley.com/articles/xterm-titles-with-bash.html
